@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layouts/main}">
+
+<body>
+    <th:block layout:fragment="content">
+    
+    <section class="chocolate_section layout_padding">
+        <div class="container-fluid bg-light py-4 mb-5">
+            <div class="container d-flex flex-column align-items-center justify-content-center">
+                <h2 class="font-weight-semi-bold text-uppercase mb-3">Chi tiết sản phẩm</h2>
+                <div class="d-inline-flex">
+                    <p class="m-0"><a th:href="@{/}">Home</a></p>
+                    <p class="m-0 px-2">-</p>
+                    <p class="m-0" th:text="${product.name}">Shop Detail</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container py-5">
+            <div class="row px-xl-5">
+                <div class="col-lg-5 pb-5">
+                    <div id="product-carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner border rounded">
+                            <div class="carousel-item active">
+                                <img class="w-100 h-100" th:src="@{${product.image}}" alt="Image" style="object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 pb-5">
+                    <h3 class="font-weight-bold" th:text="${product.name}">Product Name</h3>
+                    <div class="d-flex mb-3 text-warning">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <small class="pt-1 text-muted ml-2">(50 Đánh giá)</small>
+                    </div>
+                    <h3 class="font-weight-bold mb-4 text-danger" th:text="${product.price != null ? #numbers.formatDecimal(product.price, 0, 'COMMA', 0, 'POINT') : '0'} + ' VNĐ'">$150.00</h3>
+                    <p class="mb-4">Khám phá sản phẩm thời trang cao cấp với chất liệu tốt nhất. Được thiết kế mang lại sự thoải mái và phong cách cho bạn trong mọi hoàn cảnh.</p>
+                    
+                    <div class="d-flex align-items-center mb-4 pt-2">
+                        <div class="input-group quantity mr-3" style="width: 130px;">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-outline-secondary btn-minus" type="button"><i class="fa fa-minus"></i></button>
+                            </div>
+                            <input type="text" class="form-control text-center" value="1" id="quantity">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary btn-plus" type="button"><i class="fa fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn btn-dark px-3 btnAddToCart" th:data-id="${product.id}" th:data-price="${product.price}">
+                            <i class="fa fa-shopping-cart mr-1"></i> Thêm vào giỏ
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row px-xl-5 mt-5">
+                <div class="col">
+                    <h4 class="mb-3 border-bottom pb-2">Mô tả sản phẩm</h4>
+                    <p>Sản phẩm chính hãng với thiết kế độc đáo, thời thượng. Đường may tỉ mỉ, chắc chắn, chất liệu thoáng mát, thân thiện với làn da. Phù hợp để mặc đi làm, đi chơi hay dự tiệc.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.btn-plus').addEventListener('click', function() {
+                var val = parseInt(document.getElementById('quantity').value);
+                document.getElementById('quantity').value = val + 1;
+            });
+            document.querySelector('.btn-minus').addEventListener('click', function() {
+                var val = parseInt(document.getElementById('quantity').value);
+                if(val > 1) document.getElementById('quantity').value = val - 1;
+            });
+        });
+    </script>
+    </th:block>
+</body>
+</html>

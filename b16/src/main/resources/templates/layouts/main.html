@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:replace="~{fragments/head :: head}"></head>
+
+<body th:class="${isHome != null and isHome} ? '' : 'sub_page'">
+  <div class="main_body_content">
+    <div class="hero_area">
+      <th:block th:replace="~{fragments/top :: top}"></th:block>
+      <th:block layout:fragment="slider"></th:block>
+    </div>
+    
+    <main layout:fragment="content"></main>
+    
+    <th:block th:replace="~{fragments/bottom :: info}"></th:block>
+  </div>
+  <th:block th:replace="~{fragments/bottom :: footer}"></th:block>
+
+  <th:block th:replace="~{fragments/scripts :: scripts}"></th:block>
+</body>
+</html>

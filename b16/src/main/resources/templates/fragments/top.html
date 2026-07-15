@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<header class="header_section" th:fragment="top">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg custom_nav-container ">
+      <a class="navbar-brand" th:href="@{/}">
+        ChocoLux Shop
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class=""> </span>
+      </button>
+
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" th:each="cat : ${categories}">
+            <a class="nav-link" th:href="@{${cat.url == '' ? '/' : '/' + cat.url}}" th:text="${cat.name}">Category</a>
+          </li>
+        </ul>
+        <div class="quote_btn-container">
+          <form class="form-inline" th:action="@{/search}" method="get">
+            <input type="text" name="q" placeholder="Search..." class="form-control mr-2" style="max-width: 150px; display: none;" id="searchInput">
+            <button class="btn  my-2 my-sm-0 nav_search-btn" type="button" onclick="document.getElementById('searchInput').style.display='block';">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
+          <a th:href="@{/dang-nhap}" class="mx-2" title="Login / Register">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </a>
+          <a th:href="@{/gio-hang}" title="Cart">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+</body>
+</html>
