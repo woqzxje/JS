@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main.html}">
+<head>
+    <title>Thông tin tài khoản</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <section class="account_section layout_padding">
+            <div class="container">
+                <div class="heading_container heading_center">
+                    <h2>Thông tin tài khoản</h2>
+                </div>
+                <div class="row justify-content-center mt-4">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-center mb-4">Xin chào, <span th:text="${user.fullName}">Tên người dùng</span>!</h5>
+                                
+                                <table class="table table-borderless mx-auto" style="max-width: 400px;">
+                                    <tbody>
+                                        <tr>
+                                            <th class="text-right" style="width: 45%; vertical-align: middle;">Tên đăng nhập:</th>
+                                            <td th:text="${user.username}" style="vertical-align: middle;">username</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-right" style="vertical-align: middle;">Họ và tên:</th>
+                                            <td th:text="${user.fullName}" style="vertical-align: middle;">Họ và tên</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-right" style="vertical-align: middle;">Quyền hạn:</th>
+                                            <td th:text="${user.role}" style="vertical-align: middle;">Vai trò</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <div class="text-center mt-4">
+                                    <form th:action="@{/dang-xuat}" method="post">
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="fa fa-sign-out"></i> Đăng xuất
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -10,6 +10,6 @@ import com.abc.b16.Entity.Product;
 public interface ProductRepository extends JpaRepository<Product, Long> {
    
     Page<Product> findByCategoryUrl(String categoryUrl, Pageable pageable);
-
-    //List<Product> findByCategoryUrl(String category_url);
+    Page<Product> findByCategoryUrlAndPriceLessThan(String categoryUrl, Double price, Pageable pageable);
+    Page<Product> findByCategoryUrlAndPriceBetween(String categoryUrl, Double minPrice, Double maxPrice, Pageable pageable);
 }

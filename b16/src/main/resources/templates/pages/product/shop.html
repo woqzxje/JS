@@ -18,32 +18,29 @@
             <div class="col-lg-3 col-md-12 mb-4">
                 <div class="border p-4 bg-light">
                     <h5 class="font-weight-bold mb-3">Lọc theo giá</h5>
-                    <form>
-                        <div class="custom-control custom-checkbox mb-2">
-                            <input type="checkbox" class="custom-control-input" id="price-all" checked>
-                            <label class="custom-control-label" for="price-all">Tất cả</label>
-                        </div>
-                        <div class="custom-control custom-checkbox mb-2">
-                            <input type="checkbox" class="custom-control-input" id="price-1">
-                            <label class="custom-control-label" for="price-1">Dưới 500k</label>
-                        </div>
-                        <div class="custom-control custom-checkbox mb-2">
-                            <input type="checkbox" class="custom-control-input" id="price-2">
-                            <label class="custom-control-label" for="price-2">500k - 1Tr</label>
-                        </div>
-                    </form>
+                    <div class="list-group">
+                        <a th:href="@{'/' + ${slug} + '?price=all'}" 
+                           class="list-group-item list-group-item-action"
+                           th:classappend="${currentPrice == 'all'} ? 'active' : ''">Tất cả</a>
+                        <a th:href="@{'/' + ${slug} + '?price=under500'}" 
+                           class="list-group-item list-group-item-action"
+                           th:classappend="${currentPrice == 'under500'} ? 'active' : ''">Dưới 500k</a>
+                        <a th:href="@{'/' + ${slug} + '?price=500to1000'}" 
+                           class="list-group-item list-group-item-action"
+                           th:classappend="${currentPrice == '500to1000'} ? 'active' : ''">500k - 1Tr</a>
+                    </div>
                 </div>
             </div>
             
             <div class="col-lg-9 col-md-12">
                 <div class="row">
-                  <div class="col-sm-6 col-md-6 col-lg-4" th:each="i : ${products}">
-                    <div class="product_box">
+                  <div class="col-sm-6 col-md-6 col-lg-4 mb-4" th:each="i : ${products}">
+                    <div class="product_box text-center border p-3 h-100 d-flex flex-column">
                       <a th:href="@{'/' + ${i.categoryUrl} + '/' + ${i.id}}">
-                         <img th:src="@{${i.image}}" alt="" class="img-fluid w-100">
+                         <img th:src="@{${i.image}}" alt="" class="img-fluid mb-3" style="max-height: 200px; object-fit: contain;">
                       </a>
                       <h5 th:text="${i.name}">Product Name</h5>
-                      <h6 th:text="${i.price != null ? #numbers.formatDecimal(i.price, 0, 'COMMA', 0, 'POINT') : '0'} + ' VNĐ'">$5.0</h6>
+                      <h6 class="text-danger mt-auto" th:text="${i.price != null ? #numbers.formatDecimal(i.price, 0, 'COMMA', 0, 'POINT') : '0'} + ' VNĐ'">$5.0</h6>
                       <div class="d-flex justify-content-center mt-3">
                         <a th:href="@{'/' + ${i.categoryUrl} + '/' + ${i.id}}" class="btn btn-sm btn-outline-secondary mr-2">Chi tiết</a>
                         <a href="#" class="btn btn-sm btn-dark btnAddToCart" th:data-id="${i.id}" th:data-price="${i.price}">Thêm vào giỏ</a>
@@ -52,13 +49,20 @@
                   </div>
                   
                   <!-- Pagination -->
-                  <div class="col-12 mt-4" th:if="${products != null and not #lists.isEmpty(products)}">
+                  <div class="col-12 mt-4" th:if="${totalPages > 1}">
                       <nav aria-label="Page navigation">
                         <ul class="pagination justify-content-center">
-                          <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                          <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                          <li class="page-item" th:classappend="${currentPage <= 1} ? 'disabled' : ''">
+                              <a class="page-link" th:href="@{'/' + ${slug} + '?page=' + ${currentPage - 1} + '&price=' + ${currentPrice}}">Trước</a>
+                          </li>
+                          
+                          <li class="page-item" th:each="i : ${#numbers.sequence(1, totalPages)}" th:classappend="${currentPage == i} ? 'active' : ''">
+                              <a class="page-link" th:href="@{'/' + ${slug} + '?page=' + ${i} + '&price=' + ${currentPrice}}" th:text="${i}">1</a>
+                          </li>
+                          
+                          <li class="page-item" th:classappend="${currentPage >= totalPages} ? 'disabled' : ''">
+                              <a class="page-link" th:href="@{'/' + ${slug} + '?page=' + ${currentPage + 1} + '&price=' + ${currentPrice}}">Sau</a>
+                          </li>
                         </ul>
                       </nav>
                   </div>

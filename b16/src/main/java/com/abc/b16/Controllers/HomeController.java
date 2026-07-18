@@ -25,8 +25,13 @@ public class HomeController {
     }
 
     @GetMapping("/gio-hang")
-    public String about() {
+    public String cart() {
         return "pages/home/cart";
+    }
+
+    @GetMapping("/gioi-thieu")
+    public String about() {
+        return "pages/home/about";
     }
 
 }

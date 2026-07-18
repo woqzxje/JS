@@ -1,6 +1,7 @@
 package com.abc.b16.Service;
 
 import java.util.List;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -24,9 +25,16 @@ public class ProductService {
         return productRepository.findAll(pageable).getContent();
     }
 
-    public List<Product> getProductByCategory(String category_url, int limit, int page) {
-        Pageable pageable = PageRequest.of(page,limit);
-        return productRepository.findByCategoryUrl(category_url, pageable).getContent();
+    public Page<Product> getProductByCategoryAndPrice(String category_url, String price, int limit, int page) {
+        Pageable pageable = PageRequest.of(page, limit);
+        if (price != null) {
+            if ("under500".equals(price)) {
+                return productRepository.findByCategoryUrlAndPriceLessThan(category_url, 500000.0, pageable);
+            } else if ("500to1000".equals(price)) {
+                return productRepository.findByCategoryUrlAndPriceBetween(category_url, 500000.0, 1000000.0, pageable);
+            }
+        }
+        return productRepository.findByCategoryUrl(category_url, pageable);
     }
 
     public Product findById(Long id) {

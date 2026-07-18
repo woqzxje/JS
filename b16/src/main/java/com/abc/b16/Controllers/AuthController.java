@@ -68,4 +68,17 @@ public class AuthController {
             return "redirect:/dang-nhap";//đăng ký thành công thì chuyển về trang đăng nhập
         }
     }
+
+    @GetMapping("/tai-khoan")
+    public String account(Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null && authentication.isAuthenticated() && !"anonymousUser".equals(authentication.getPrincipal())) {
+            String username = authentication.getName();
+            employeeRepository.findByUsername(username).ifPresent(employee -> {
+                model.addAttribute("user", employee);
+            });
+            return "pages/account/profile";
+        }
+        return "redirect:/dang-nhap";
+    }
 }

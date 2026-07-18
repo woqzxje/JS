@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
+
+<body>
+  <th:block layout:fragment="content">
+    
+    <!-- about section -->
+    <section class="about_section layout_padding ">
+      <div class="container  ">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>
+                  Về Chúng Tôi
+                </h2>
+              </div>
+              <p>
+                ChocoLux là thương hiệu socola uy tín, chuyên cung cấp các sản phẩm socola chất lượng cao, an toàn và ngon miệng. Chúng tôi cam kết sử dụng những nguyên liệu tuyển chọn khắt khe nhất để mang lại hương vị ngọt ngào và tinh tế cho từng sản phẩm.
+              </p>
+              <p>
+                Với kinh nghiệm nhiều năm trong ngành sản xuất socola, ChocoLux không ngừng sáng tạo để mang đến những bộ sưu tập đa dạng, từ socola đen nguyên chất, socola sữa mềm mịn đến những loại socola nhân hạt độc đáo. Sứ mệnh của chúng tôi là lan tỏa niềm vui và sự ngọt ngào đến với mọi người thông qua từng thanh socola.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-box">
+              <img th:src="@{/images/about-img.png}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end about section -->
+
+  </th:block>
+</body>
+</html>

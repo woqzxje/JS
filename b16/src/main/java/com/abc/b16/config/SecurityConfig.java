@@ -33,6 +33,13 @@ public class SecurityConfig {
             .defaultSuccessUrl("/", true) // Đăng nhập thành công thì về trang chủ
             .failureUrl("/dang-nhap?error") // Đăng nhập thất bại thì về đây
             .permitAll()
+        )
+        .logout(logout -> logout
+            .logoutUrl("/dang-xuat") // Đường dẫn để đăng xuất
+            .logoutSuccessUrl("/") // Đăng xuất thành công về trang chủ
+            .invalidateHttpSession(true) // Xóa session
+            .deleteCookies("JSESSIONID") // Xóa cookie
+            .permitAll()
         );
             
         return http.build();
