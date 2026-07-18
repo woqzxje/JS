@@ -9,7 +9,7 @@ $textCol: #6c6c6c;
 }
 
 @mixin second-font {
-  font-family: "SnellBT Regular", sans-serif;
+  font-family: "Dancing Script", cursive;
 }
 
 @mixin hero_btn($col1, $col2, $pad1, $pad2, $bRadius) {
@@ -734,8 +734,6 @@ a:focus {
 // contact section
 .contact_section {
   position: relative;
-
-  .form_container {}
 
   form {
     margin-top: 25px;

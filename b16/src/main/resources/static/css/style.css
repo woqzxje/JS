@@ -43,7 +43,7 @@ body {
 }
 
 .heading_container h2 {
-  font-family: "SnellBT Regular", sans-serif;
+  font-family: "Dancing Script", cursive;
   position: relative;
   font-weight: bold;
   font-size: 2.5rem;
@@ -126,7 +126,7 @@ a:focus {
   font-size: 28px;
   font-weight: bold;
   color: #ffffff;
-  font-family: "SnellBT Regular", sans-serif;
+  font-family: "Dancing Script", cursive;
   color: #000000;
 }
 
@@ -300,7 +300,7 @@ a:focus {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 30px;
-  font-family: "SnellBT Regular", sans-serif;
+  font-family: "Dancing Script", cursive;
 }
 
 .slider_section .detail_box h1 span {
@@ -314,7 +314,7 @@ a:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "SnellBT Regular", sans-serif;
+  font-family: "Dancing Script", cursive;
   color: #ffffff;
   font-weight: 500;
   margin-top: 75px;
@@ -383,7 +383,7 @@ a:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "SnellBT Regular", sans-serif;
+  font-family: "Dancing Script", cursive;
   color: #46200b;
   font-weight: bold;
   margin-top: 25px;
@@ -546,7 +546,7 @@ a:focus {
 }
 
 .offer_section {
-  font-family: "SnellBT Regular", sans-serif;
+  font-family: "Dancing Script", cursive;
 }
 
 .offer_section .box {
@@ -623,7 +623,7 @@ a:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "SnellBT Regular", sans-serif;
+  font-family: "Dancing Script", cursive;
   color: #46200b;
   font-weight: bold;
   margin-top: 25px;
@@ -934,7 +934,7 @@ a:focus {
 }
 
 .info_section h4 {
-  font-family: "SnellBT Regular", sans-serif;
+  font-family: "Dancing Script", cursive;
   margin-bottom: 15px;
 }
 
