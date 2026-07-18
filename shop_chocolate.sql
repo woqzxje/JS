@@ -343,7 +343,12 @@ INSERT INTO `products` (`id`, `category_id`, `brand_id`, `name`, `description`, 
 (7, 7, 7, 'Socola hình tam giác Toblerone', 'Dòng chocolate Thụy Sĩ đặc trưng với hình dáng tam giác phỏng theo đỉnh núi Alps, kết hợp mật ong và hạnh nhân.', 'Mật ong, Hạnh nhân', 'Unisex', 'ACTIVE', '2026-06-15 01:21:26'),
 (8, 8, 8, 'Socola Cadbury Dairy Milk', 'Niềm tự hào của nước Anh với dòng Dairy Milk mang hương vị sữa đậm đà, mượt mà.', 'Sữa, Cacao', 'Unisex', 'ACTIVE', '2026-06-15 01:21:26'),
 (9, 9, 9, 'Socola miếng Hershey''s Kisses', 'Biểu tượng chocolate kiểu Mỹ với hương vị dễ ăn, nổi bật nhất là dòng chocolate miếng Kisses.', 'Sữa, Cacao', 'Unisex', 'ACTIVE', '2026-06-15 01:21:26'),
-(10, 10, 10, 'Kẹo socola viên bọc đường M&M''s', 'Thương hiệu Mỹ với những viên kẹo chocolate bọc vỏ đường màu sắc rực rỡ.', 'Cacao', 'Unisex', 'ACTIVE', '2026-06-15 01:21:26');
+(10, 10, 10, 'Kẹo socola viên bọc đường M&M''s', 'Thương hiệu Mỹ với những viên kẹo chocolate bọc vỏ đường màu sắc rực rỡ.', 'Cacao', 'Unisex', 'ACTIVE', '2026-06-15 01:21:26'),
+(11, 1, 1, 'Socola Đen Nguyên Chất 85%', 'Hương vị đắng nhẹ, thơm nồng từ hạt cacao nguyên chất 85%.', 'Cacao 85%', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
+(12, 2, 2, 'Socola Sữa Hạt Điều', 'Sự kết hợp hoàn hảo giữa socola sữa ngọt ngào và hạt điều bùi béo.', 'Cacao, Sữa, Hạt Điều', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
+(13, 3, 3, 'Socola Trắng Matcha', 'Vị ngọt thanh của socola trắng hòa quyện cùng bột trà xanh matcha Nhật Bản.', 'Bơ cacao, Sữa, Matcha', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
+(14, 4, 4, 'Socola Hạnh Nhân Phủ Cacao', 'Hạt hạnh nhân Mỹ giòn rụm bọc trong lớp socola và bột cacao đắng nhẹ.', 'Cacao, Hạnh nhân', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
+(15, 5, 5, 'Nama Chocolate Vị Dâu Tây', 'Socola tươi mịn màng quyện với vị chua ngọt tự nhiên của dâu tây.', 'Kem tươi, Bơ cacao, Dâu tây', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00');
 
 -- --------------------------------------------------------
 
@@ -371,7 +376,12 @@ INSERT INTO `product_images` (`id`, `product_id`, `image_url`) VALUES
 (7, 7, '/images/toblerone.png'),
 (8, 8, '/images/cadbury.png'),
 (9, 9, '/images/hersheys.png'),
-(10, 10, '/images/mms.png');
+(10, 10, '/images/mms.png'),
+(11, 11, '/images/socola-den-85.png'),
+(12, 12, '/images/socola-sua-hat-dieu.png'),
+(13, 13, '/images/socola-trang-matcha.png'),
+(14, 14, '/images/socola-hanh-nhan.png'),
+(15, 15, '/images/nama-dau-tay.png');
 
 -- --------------------------------------------------------
 
@@ -405,7 +415,12 @@ INSERT INTO `product_variants` (`id`, `product_id`, `color_id`, `size_id`, `sku`
 (7, 7, 7, 9, 'TOBLERONE-01', 800000.00, 750000.00, 25, '/images/toblerone.png'),
 (8, 8, 8, 7, 'CADBURY-01', 150000.00, 140000.00, 20, '/images/cadbury.png'),
 (9, 9, 9, 2, 'HERSHEY-01', 60000.00, 50000.00, 35, '/images/hersheys.png'),
-(10, 10, 1, 4, 'MMS-01', 180000.00, 150000.00, 45, '/images/mms.png');
+(10, 10, 1, 4, 'MMS-01', 180000.00, 150000.00, 45, '/images/mms.png'),
+(11, 11, 1, 2, 'DEN-85', 180000.00, 160000.00, 50, '/images/socola-den-85.png'),
+(12, 12, 9, 2, 'SUA-DIEU', 150000.00, 140000.00, 60, '/images/socola-sua-hat-dieu.png'),
+(13, 13, 2, 2, 'TRANG-MAT', 200000.00, 190000.00, 40, '/images/socola-trang-matcha.png'),
+(14, 14, 1, 3, 'HAT-HANH', 250000.00, 220000.00, 80, '/images/socola-hanh-nhan.png'),
+(15, 15, 8, 2, 'NAMA-DAU', 190000.00, 175000.00, 30, '/images/nama-dau-tay.png');
 
 -- --------------------------------------------------------
 
