@@ -65,7 +65,7 @@ public class AuthController {
             employee.setFullName(registerRequest.getFullName());
             employee.setRole(Role.STAFF);
             employeeRepository.save(employee);
-            return "redirect:/dang-nhap";//đăng ký thành công thì chuyển về trang đăng nhập
+            return "redirect:/dang-nhap?register_success=true";//đăng ký thành công thì chuyển về trang đăng nhập
         }
     }
 

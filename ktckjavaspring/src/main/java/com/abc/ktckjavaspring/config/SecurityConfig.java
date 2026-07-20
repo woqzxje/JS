@@ -30,13 +30,13 @@ public class SecurityConfig {
             .formLogin(form -> form
             .loginPage("/dang-nhap") // Chỉ định trang GET hiển thị form
             .loginProcessingUrl("/dang-nhap") // Bắt Spring Security xử lý POST tại đây
-            .defaultSuccessUrl("/", true) // Đăng nhập thành công thì về trang chủ
+            .defaultSuccessUrl("/?login_success=true", true) // Đăng nhập thành công thì về trang chủ kèm cờ báo hiệu
             .failureUrl("/dang-nhap?error") // Đăng nhập thất bại thì về đây
             .permitAll()
         )
         .logout(logout -> logout
             .logoutUrl("/dang-xuat") // Đường dẫn để đăng xuất
-            .logoutSuccessUrl("/") // Đăng xuất thành công về trang chủ
+            .logoutSuccessUrl("/?logout_success=true") // Đăng xuất thành công về trang chủ kèm cờ báo hiệu
             .invalidateHttpSession(true) // Xóa session
             .deleteCookies("JSESSIONID") // Xóa cookie
             .permitAll()

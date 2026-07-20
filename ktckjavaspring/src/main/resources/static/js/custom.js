@@ -55,6 +55,19 @@ $(document).ready(function() {
         };
     }
 
+    // Kiểm tra URL parameters để hiển thị thông báo (Đăng nhập/Đăng ký)
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('login_success')) {
+        toastr.success('Đăng nhập thành công!');
+        window.history.replaceState({}, document.title, window.location.pathname);
+    } else if (urlParams.has('logout_success')) {
+        toastr.success('Đăng xuất thành công!');
+        window.history.replaceState({}, document.title, window.location.pathname);
+    } else if (urlParams.has('register_success')) {
+        toastr.success('Đăng ký tài khoản thành công! Vui lòng đăng nhập.');
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
     $('.btnAddToCart').click(function(e) {
         e.preventDefault();
         
