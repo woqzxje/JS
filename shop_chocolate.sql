@@ -326,12 +326,12 @@ INSERT INTO `products` (`id`, `category_id`, `brand_id`, `name`, `description`, 
 (3, 3, 3, 'Socola tạo hình vỏ sò nhân hạt dẻ rang', 'Thương hiệu Bỉ lừng danh thế giới với dòng sản phẩm chocolate tạo hình vỏ sò độc đáo hòa quyện cùng nhân hạt dẻ rang.', 'Hạt dẻ, Cacao', 'Unisex', 'ACTIVE', '2026-06-15 01:21:26'),
 (4, 4, 4, 'Socola Valrhona chuyên dụng làm bánh', 'Thương hiệu Pháp đỉnh cao chuyên cung cấp chocolate cao cấp cho các đầu bếp bánh chuyên nghiệp.', 'Cacao', 'Unisex', 'ACTIVE', '2026-06-15 01:21:26'),
 (5, 5, 5, 'Nama Chocolate', 'Đại diện lừng danh đến từ Nhật Bản với dòng chocolate tươi (Nama Chocolate) mềm mịn, béo ngậy.', 'Kem tươi, Cacao', 'Unisex', 'ACTIVE', '2026-06-15 01:21:26'),
-(6, 6, 6, 'Viên socola bọc giấy vàng Ferrero Rocher', 'Thương hiệu Ý kinh điển với viên chocolate bọc giấy vàng gồm nhiều lớp bánh xốp, kem chocolate và hạt dẻ giòn rụm.', 'Hạt phỉ, Cacao', 'Unisex', 'ACTIVE', '2026-06-15 01:21:26'),
 (11, 1, 1, 'Lindt Socola Thanh Truyền Thống Sữa Hạt Dẻ', 'Hương vị đắng nhẹ, thơm nồng từ hạt cacao nguyên chất 85%.', 'Cacao 85%', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
 (12, 2, 2, 'Socola Godiva Blue', 'Sự kết hợp hoàn hảo giữa socola sữa ngọt ngào và hạt điều bùi béo.', 'Cacao, Sữa, Hạt Điều', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
 (13, 3, 3, 'Socola Guylian SE Shells', 'Vị ngọt thanh của socola trắng hòa quyện cùng bột trà xanh matcha Nhật Bản.', 'Bơ cacao, Sữa, Matcha', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
 (14, 4, 4, 'Socola Valrhona', 'Hạt hạnh nhân Mỹ giòn rụm bọc trong lớp socola và bột cacao đắng nhẹ.', 'Cacao, Hạnh nhân', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
-(15, 5, 5, 'Socola Royce Nama', 'Socola tươi mịn màng quyện với vị chua ngọt tự nhiên của dâu tây.', 'Kem tươi, Bơ cacao, Dâu tây', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00');
+(15, 5, 5, 'Socola Royce Nama', 'Socola tươi mịn màng quyện với vị chua ngọt tự nhiên của dâu tây.', 'Kem tươi, Bơ cacao, Dâu tây', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
+(16, 6, 10, 'Kẹo M&Ms', 'Kẹo chocolate sữa bọc đường nhiều màu sắc tuyệt hảo.', 'Cacao, Sữa', 'Unisex', 'ACTIVE', '2026-07-20 10:00:00');
 
 -- --------------------------------------------------------
 
@@ -355,12 +355,12 @@ INSERT INTO `product_images` (`id`, `product_id`, `image_url`) VALUES
 (3, 3, '/images/guylian.png'),
 (4, 4, '/images/valrhona.png'),
 (5, 5, '/images/royce.png'),
-(6, 6, '/images/ferrero.png'),
 (11, 11, '/images/lindtswissclassic.png'),
 (12, 12, '/images/godivablue.png'),
 (13, 13, '/images/guylian2.png'),
 (14, 14, '/images/valrhona2.png'),
-(15, 15, '/images/royce2.png');
+(15, 15, '/images/royce2.png'),
+(16, 16, '/images/mms.png');
 
 -- --------------------------------------------------------
 
@@ -390,12 +390,12 @@ INSERT INTO `product_variants` (`id`, `product_id`, `color_id`, `size_id`, `sku`
 (3, 3, 3, 2, 'GUYLIAN-01', 85000.00, 75000.00, 50, '/images/guylian.png'),
 (4, 4, 4, 7, 'VALRHONA-01', 250000.00, 220000.00, 60, '/images/valrhona.png'),
 (5, 5, 5, 2, 'ROYCE-01', 150000.00, 130000.00, 40, '/images/royce.png'),
-(6, 6, 6, 8, 'FERRERO-01', 500000.00, 450000.00, 30, '/images/ferrero.png'),
 (11, 11, 1, 2, 'DEN-85', 180000.00, 160000.00, 50, '/images/socola-den-85.png'),
 (12, 12, 9, 2, 'SUA-DIEU', 150000.00, 140000.00, 60, '/images/socola-sua-hat-dieu.png'),
 (13, 13, 2, 2, 'TRANG-MAT', 200000.00, 190000.00, 40, '/images/socola-trang-matcha.png'),
 (14, 14, 1, 3, 'HAT-HANH', 250000.00, 220000.00, 80, '/images/socola-hanh-nhan.png'),
-(15, 15, 8, 2, 'NAMA-DAU', 190000.00, 175000.00, 30, '/images/nama-dau-tay.png');
+(15, 15, 8, 2, 'NAMA-DAU', 190000.00, 175000.00, 30, '/images/nama-dau-tay.png'),
+(16, 16, 1, 2, 'MMS-01', 50000.00, 45000.00, 100, '/images/mms.png');
 
 -- --------------------------------------------------------
 

@@ -28,10 +28,18 @@ public class ProductService {
     public Page<Product> getProductByCategoryAndPrice(String category_url, String price, int limit, int page) {
         Pageable pageable = PageRequest.of(page, limit);
         if (price != null) {
-            if ("under500".equals(price)) {
-                return productRepository.findByCategoryUrlAndPriceLessThan(category_url, 500000.0, pageable);
-            } else if ("500to1000".equals(price)) {
-                return productRepository.findByCategoryUrlAndPriceBetween(category_url, 500000.0, 1000000.0, pageable);
+            if ("under100".equals(price)) {
+                return productRepository.findByCategoryUrlAndPriceLessThan(category_url, 100000.0, pageable);
+            } else if ("100to200".equals(price)) {
+                return productRepository.findByCategoryUrlAndPriceBetween(category_url, 100000.0, 200000.0, pageable);
+            } else if ("200to300".equals(price)) {
+                return productRepository.findByCategoryUrlAndPriceBetween(category_url, 200000.0, 300000.0, pageable);
+            } else if ("300to400".equals(price)) {
+                return productRepository.findByCategoryUrlAndPriceBetween(category_url, 300000.0, 400000.0, pageable);
+            } else if ("400to500".equals(price)) {
+                return productRepository.findByCategoryUrlAndPriceBetween(category_url, 400000.0, 500000.0, pageable);
+            } else if ("above500".equals(price)) {
+                return productRepository.findByCategoryUrlAndPriceGreaterThanEqual(category_url, 500000.0, pageable);
             }
         }
         return productRepository.findByCategoryUrl(category_url, pageable);

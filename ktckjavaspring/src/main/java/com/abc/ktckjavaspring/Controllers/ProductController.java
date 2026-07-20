@@ -53,6 +53,7 @@ public class ProductController {
         //
         Product product = productService.findById(id);
         model.addAttribute("product", product);
+        model.addAttribute("slug", slug);
         return "pages/product/single";
     }
 }

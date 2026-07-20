@@ -22,12 +22,24 @@
                         <a th:href="@{'/' + ${slug} + '?price=all'}" 
                            class="list-group-item list-group-item-action"
                            th:classappend="${currentPrice == 'all'} ? 'active' : ''">Tất cả</a>
-                        <a th:href="@{'/' + ${slug} + '?price=under500'}" 
+                        <a th:href="@{'/' + ${slug} + '?price=under100'}" 
                            class="list-group-item list-group-item-action"
-                           th:classappend="${currentPrice == 'under500'} ? 'active' : ''">Dưới 500k</a>
-                        <a th:href="@{'/' + ${slug} + '?price=500to1000'}" 
+                           th:classappend="${currentPrice == 'under100'} ? 'active' : ''">Dưới 100k</a>
+                        <a th:href="@{'/' + ${slug} + '?price=100to200'}" 
                            class="list-group-item list-group-item-action"
-                           th:classappend="${currentPrice == '500to1000'} ? 'active' : ''">500k - 1Tr</a>
+                           th:classappend="${currentPrice == '100to200'} ? 'active' : ''">100k - 200k</a>
+                        <a th:href="@{'/' + ${slug} + '?price=200to300'}" 
+                           class="list-group-item list-group-item-action"
+                           th:classappend="${currentPrice == '200to300'} ? 'active' : ''">200k - 300k</a>
+                        <a th:href="@{'/' + ${slug} + '?price=300to400'}" 
+                           class="list-group-item list-group-item-action"
+                           th:classappend="${currentPrice == '300to400'} ? 'active' : ''">300k - 400k</a>
+                        <a th:href="@{'/' + ${slug} + '?price=400to500'}" 
+                           class="list-group-item list-group-item-action"
+                           th:classappend="${currentPrice == '400to500'} ? 'active' : ''">400k - 500k</a>
+                        <a th:href="@{'/' + ${slug} + '?price=above500'}" 
+                           class="list-group-item list-group-item-action"
+                           th:classappend="${currentPrice == 'above500'} ? 'active' : ''">Trên 500k</a>
                     </div>
                 </div>
             </div>

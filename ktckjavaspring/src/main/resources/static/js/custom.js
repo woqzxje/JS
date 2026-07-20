@@ -73,15 +73,19 @@ $(document).ready(function() {
                 },
                 data: JSON.stringify(request),
                 success: function(response) {
-                    if(response.success) {
+                    if(response.success === true) {
                         alert('Thêm vào giỏ hàng thành công!');
-                    } else {
+                    } else if (response.success === false) {
                         alert('Lỗi: ' + response.message);
+                    } else {
+                        alert('Vui lòng đăng nhập để sử dụng tính năng này.');
+                        window.location.href = '/dang-nhap';
                     }
                 },
                 error: function(xhr, status, error) {
                     if (xhr.status === 403 || xhr.status === 401) {
                          alert("Vui lòng đăng nhập để thêm vào giỏ hàng.");
+                         window.location.href = '/dang-nhap';
                     } else {
                          alert("Đã xảy ra lỗi khi thêm vào giỏ hàng.");
                     }
@@ -108,7 +112,7 @@ $(document).ready(function() {
                     [csrfData.headerName]: csrfData.token
                 },
                 success: function(response) {
-                    if (response.success && response.data) {
+                    if (response.success === true && response.data) {
                         var cart = response.data;
                         var tbody = $('#cart-items');
                         tbody.empty();
@@ -127,7 +131,7 @@ $(document).ready(function() {
                             tr.append('<td class="align-middle">' + formatPrice(item.price) + '</td>');
                             
                             var qtyTd = $('<td class="align-middle"></td>');
-                            var qtyWrapper = $('<div class="input-group quantity mx-auto" style="width: 100px;"></div>');
+                            var qtyWrapper = $('<div class="input-group quantity mx-auto" style="width: 130px;"></div>');
                             var minusBtn = $('<div class="input-group-prepend"><button class="btn btn-outline-secondary btn-cart-minus" data-id="' + item.variantId + '"><i class="fa fa-minus"></i></button></div>');
                             var qtyInput = $('<input type="text" class="form-control text-center" value="' + item.quantity + '" readonly>');
                             var plusBtn = $('<div class="input-group-append"><button class="btn btn-outline-secondary btn-cart-plus" data-id="' + item.variantId + '"><i class="fa fa-plus"></i></button></div>');
@@ -166,10 +170,13 @@ $(document).ready(function() {
                         [csrfData.headerName]: csrfData.token
                     },
                     success: function(response) {
-                        if(response.success) {
+                        if(response.success === true) {
                             loadCartItems(); // Tải lại giỏ hàng
-                        } else {
+                        } else if (response.success === false) {
                             alert('Lỗi: ' + response.message);
+                        } else {
+                            alert('Vui lòng đăng nhập để sử dụng tính năng này.');
+                            window.location.href = '/dang-nhap';
                         }
                     }
                 });
@@ -193,10 +200,13 @@ $(document).ready(function() {
                 },
                 data: JSON.stringify(request),
                 success: function(response) {
-                    if(response.success) {
+                    if(response.success === true) {
                         loadCartItems();
-                    } else {
+                    } else if (response.success === false) {
                         alert('Lỗi: ' + response.message);
+                    } else {
+                        alert('Vui lòng đăng nhập để sử dụng tính năng này.');
+                        window.location.href = '/dang-nhap';
                     }
                 }
             });
