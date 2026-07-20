@@ -45,6 +45,16 @@ function myMap() {
 
 // Thêm vào giỏ hàng AJAX
 $(document).ready(function() {
+    // Cấu hình Toastr
+    if (typeof toastr !== 'undefined') {
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "timeOut": "3000"
+        };
+    }
+
     $('.btnAddToCart').click(function(e) {
         e.preventDefault();
         
@@ -74,25 +84,25 @@ $(document).ready(function() {
                 data: JSON.stringify(request),
                 success: function(response) {
                     if(response.success === true) {
-                        alert('Thêm vào giỏ hàng thành công!');
+                        toastr.success('Thêm vào giỏ hàng thành công!');
                     } else if (response.success === false) {
-                        alert('Lỗi: ' + response.message);
+                        toastr.error('Lỗi: ' + response.message);
                     } else {
-                        alert('Vui lòng đăng nhập để sử dụng tính năng này.');
-                        window.location.href = '/dang-nhap';
+                        toastr.warning('Vui lòng đăng nhập để sử dụng tính năng này.');
+                        setTimeout(function() { window.location.href = '/dang-nhap'; }, 1500);
                     }
                 },
                 error: function(xhr, status, error) {
                     if (xhr.status === 403 || xhr.status === 401) {
-                         alert("Vui lòng đăng nhập để thêm vào giỏ hàng.");
-                         window.location.href = '/dang-nhap';
+                         toastr.warning("Vui lòng đăng nhập để thêm vào giỏ hàng.");
+                         setTimeout(function() { window.location.href = '/dang-nhap'; }, 1500);
                     } else {
-                         alert("Đã xảy ra lỗi khi thêm vào giỏ hàng.");
+                         toastr.error("Đã xảy ra lỗi khi thêm vào giỏ hàng.");
                     }
                 }
             });
         }).fail(function() {
-            alert("Lỗi cấu hình bảo mật (CSRF).");
+            toastr.error("Lỗi cấu hình bảo mật (CSRF).");
         });
     });
 
@@ -171,12 +181,13 @@ $(document).ready(function() {
                     },
                     success: function(response) {
                         if(response.success === true) {
+                            toastr.success('Đã xóa sản phẩm khỏi giỏ hàng.');
                             loadCartItems(); // Tải lại giỏ hàng
                         } else if (response.success === false) {
-                            alert('Lỗi: ' + response.message);
+                            toastr.error('Lỗi: ' + response.message);
                         } else {
-                            alert('Vui lòng đăng nhập để sử dụng tính năng này.');
-                            window.location.href = '/dang-nhap';
+                            toastr.warning('Vui lòng đăng nhập để sử dụng tính năng này.');
+                            setTimeout(function() { window.location.href = '/dang-nhap'; }, 1500);
                         }
                     }
                 });
@@ -203,10 +214,10 @@ $(document).ready(function() {
                     if(response.success === true) {
                         loadCartItems();
                     } else if (response.success === false) {
-                        alert('Lỗi: ' + response.message);
+                        toastr.error('Lỗi: ' + response.message);
                     } else {
-                        alert('Vui lòng đăng nhập để sử dụng tính năng này.');
-                        window.location.href = '/dang-nhap';
+                        toastr.warning('Vui lòng đăng nhập để sử dụng tính năng này.');
+                        setTimeout(function() { window.location.href = '/dang-nhap'; }, 1500);
                     }
                 }
             });
