@@ -23,7 +23,8 @@
                     <div id="product-carousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner border rounded">
                             <div class="carousel-item active">
-                                <img class="w-100 h-100" th:src="@{${product.image}}" alt="Image" style="object-fit: cover;">
+                                <img th:if="${product.image != null and !product.image.isEmpty()}" class="w-100 h-100" th:src="@{${product.image}}" alt="Image" style="object-fit: cover;">
+                                <img th:unless="${product.image != null and !product.image.isEmpty()}" class="w-100 h-100" th:src="@{/images/chocolate1.png}" alt="No Image" style="object-fit: cover;">
                             </div>
                         </div>
                     </div>

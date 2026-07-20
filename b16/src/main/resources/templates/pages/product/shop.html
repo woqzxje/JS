@@ -37,7 +37,8 @@
                   <div class="col-sm-6 col-md-6 col-lg-4 mb-4" th:each="i : ${products}">
                     <div class="product_box text-center border p-3 h-100 d-flex flex-column">
                       <a th:href="@{'/' + ${i.categoryUrl} + '/' + ${i.id}}">
-                         <img th:src="@{${i.image}}" alt="" class="img-fluid mb-3" style="max-height: 200px; object-fit: contain;">
+                         <img th:if="${i.image != null and !i.image.isEmpty()}" th:src="@{${i.image}}" alt="" class="img-fluid mb-3" style="max-height: 200px; object-fit: contain;">
+                         <img th:unless="${i.image != null and !i.image.isEmpty()}" th:src="@{/images/chocolate1.png}" alt="No Image" class="img-fluid mb-3" style="max-height: 200px; object-fit: contain;">
                       </a>
                       <h5 th:text="${i.name}">Product Name</h5>
                       <h6 class="text-danger mt-auto" th:text="${i.price != null ? #numbers.formatDecimal(i.price, 0, 'COMMA', 0, 'POINT') : '0'} + ' VNĐ'">$5.0</h6>

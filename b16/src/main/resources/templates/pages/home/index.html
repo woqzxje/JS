@@ -127,7 +127,8 @@
           <!-- Iterate over products properly inside the original custom container -->
           <div class="box" th:each="i : ${products}">
             <div class="img-box">
-              <img th:src="@{${i.image}}" alt="">
+              <img th:if="${i.image != null and !i.image.isEmpty()}" th:src="@{${i.image}}" alt="">
+              <img th:unless="${i.image != null and !i.image.isEmpty()}" th:src="@{/images/chocolate1.png}" alt="No Image">
             </div>
             <div class="detail-box">
               <h6 th:text="${i.name}">

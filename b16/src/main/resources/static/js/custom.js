@@ -122,7 +122,8 @@ $(document).ready(function() {
                         
                         cart.details.forEach(function(item) {
                             var tr = $('<tr></tr>');
-                            tr.append('<td class="align-middle text-left"><img src="' + item.image + '" alt="" style="width: 50px; margin-right: 10px;"> ' + item.name + '</td>');
+                            var imageSrc = (item.image && item.image.trim() !== '') ? item.image : '/images/chocolate1.png';
+                            tr.append('<td class="align-middle text-left"><img src="' + imageSrc + '" alt="" style="width: 50px; margin-right: 10px;"> ' + item.name + '</td>');
                             tr.append('<td class="align-middle">' + formatPrice(item.price) + '</td>');
                             
                             var qtyTd = $('<td class="align-middle"></td>');
