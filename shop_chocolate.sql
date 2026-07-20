@@ -111,7 +111,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `url`, `sort`, `description`, `created_at`) VALUES
-(1, 'Socola Lindor', 'socola-den', '0', 'Socola đen nguyên chất', '2026-06-15 01:21:26'),
+(1, 'Socola Lindt', 'socola-den', '0', 'Socola đen nguyên chất', '2026-06-15 01:21:26'),
 (2, 'Socola Godiva', 'socola-sua', '0', 'Socola sữa ngọt ngào', '2026-06-15 01:21:26'),
 (3, 'Socola Ghylian', 'socola-trang', '0', 'Socola trắng béo ngậy', '2026-06-15 01:21:26'),
 (4, 'Socola Valrhona', 'socola-hat', '0', 'Socola nhân các loại hạt', '2026-06-15 01:21:26'),
@@ -232,16 +232,7 @@ CREATE TABLE `employees` (
 
 INSERT INTO `employees` (`id`, `full_name`, `username`, `password_hash`, `role`, `created_at`) VALUES
 (1, 'Admin System', 'admin', '123456', 'ADMIN', '2026-06-15 01:21:26'),
-(2, 'Manager 1', 'manager1', '123456', 'MANAGER', '2026-06-15 01:21:26'),
-(3, 'Staff 1', 'staff1', '123456', 'STAFF', '2026-06-15 01:21:26'),
-(4, 'Staff 2', 'staff2', '123456', 'STAFF', '2026-06-15 01:21:26'),
-(5, 'Staff 3', 'staff3', '123456', 'STAFF', '2026-06-15 01:21:26'),
-(6, 'Staff 4', 'staff4', '123456', 'STAFF', '2026-06-15 01:21:26'),
-(7, 'Staff 5', 'staff5', '123456', 'STAFF', '2026-06-15 01:21:26'),
-(8, 'Staff 6', 'staff6', '123456', 'STAFF', '2026-06-15 01:21:26'),
-(9, 'Staff 7', 'staff7', '123456', 'STAFF', '2026-06-15 01:21:26'),
-(10, 'Staff 8', 'staff8', '123456', 'STAFF', '2026-06-15 01:21:26'),
-(11, 'staff9', 'staff9', '$2a$10$CG67uSLLdOaNq1o1nL3AK.lP2qfg6DI6exBVPy7q.0iIT/xGdpjbS', 'STAFF', '2026-07-02 07:58:42');
+(2, 'Manager 1', 'manager1', '123456', 'MANAGER', '2026-06-15 01:21:26');
 
 -- --------------------------------------------------------
 
@@ -336,11 +327,11 @@ INSERT INTO `products` (`id`, `category_id`, `brand_id`, `name`, `description`, 
 (4, 4, 4, 'Socola Valrhona chuyên dụng làm bánh', 'Thương hiệu Pháp đỉnh cao chuyên cung cấp chocolate cao cấp cho các đầu bếp bánh chuyên nghiệp.', 'Cacao', 'Unisex', 'ACTIVE', '2026-06-15 01:21:26'),
 (5, 5, 5, 'Nama Chocolate', 'Đại diện lừng danh đến từ Nhật Bản với dòng chocolate tươi (Nama Chocolate) mềm mịn, béo ngậy.', 'Kem tươi, Cacao', 'Unisex', 'ACTIVE', '2026-06-15 01:21:26'),
 (6, 6, 6, 'Viên socola bọc giấy vàng Ferrero Rocher', 'Thương hiệu Ý kinh điển với viên chocolate bọc giấy vàng gồm nhiều lớp bánh xốp, kem chocolate và hạt dẻ giòn rụm.', 'Hạt phỉ, Cacao', 'Unisex', 'ACTIVE', '2026-06-15 01:21:26'),
-(11, 1, 1, 'Socola Đen Nguyên Chất 85%', 'Hương vị đắng nhẹ, thơm nồng từ hạt cacao nguyên chất 85%.', 'Cacao 85%', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
-(12, 2, 2, 'Socola Sữa Hạt Điều', 'Sự kết hợp hoàn hảo giữa socola sữa ngọt ngào và hạt điều bùi béo.', 'Cacao, Sữa, Hạt Điều', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
-(13, 3, 3, 'Socola Trắng Matcha', 'Vị ngọt thanh của socola trắng hòa quyện cùng bột trà xanh matcha Nhật Bản.', 'Bơ cacao, Sữa, Matcha', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
-(14, 4, 4, 'Socola Hạnh Nhân Phủ Cacao', 'Hạt hạnh nhân Mỹ giòn rụm bọc trong lớp socola và bột cacao đắng nhẹ.', 'Cacao, Hạnh nhân', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
-(15, 5, 5, 'Nama Chocolate Vị Dâu Tây', 'Socola tươi mịn màng quyện với vị chua ngọt tự nhiên của dâu tây.', 'Kem tươi, Bơ cacao, Dâu tây', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00');
+(11, 1, 1, 'Lindt Socola Thanh Truyền Thống Sữa Hạt Dẻ', 'Hương vị đắng nhẹ, thơm nồng từ hạt cacao nguyên chất 85%.', 'Cacao 85%', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
+(12, 2, 2, 'Socola Godiva Blue', 'Sự kết hợp hoàn hảo giữa socola sữa ngọt ngào và hạt điều bùi béo.', 'Cacao, Sữa, Hạt Điều', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
+(13, 3, 3, 'Socola Guylian SE Shells', 'Vị ngọt thanh của socola trắng hòa quyện cùng bột trà xanh matcha Nhật Bản.', 'Bơ cacao, Sữa, Matcha', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
+(14, 4, 4, 'Socola Valrhona', 'Hạt hạnh nhân Mỹ giòn rụm bọc trong lớp socola và bột cacao đắng nhẹ.', 'Cacao, Hạnh nhân', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00'),
+(15, 5, 5, 'Socola Royce Nama', 'Socola tươi mịn màng quyện với vị chua ngọt tự nhiên của dâu tây.', 'Kem tươi, Bơ cacao, Dâu tây', 'Unisex', 'ACTIVE', '2026-07-18 10:00:00');
 
 -- --------------------------------------------------------
 
@@ -365,11 +356,11 @@ INSERT INTO `product_images` (`id`, `product_id`, `image_url`) VALUES
 (4, 4, '/images/valrhona.png'),
 (5, 5, '/images/royce.png'),
 (6, 6, '/images/ferrero.png'),
-(11, 11, '/images/socola-den-85.png'),
-(12, 12, '/images/socola-sua-hat-dieu.png'),
-(13, 13, '/images/socola-trang-matcha.png'),
-(14, 14, '/images/socola-hanh-nhan.png'),
-(15, 15, '/images/nama-dau-tay.png');
+(11, 11, '/images/lindtswissclassic.png'),
+(12, 12, '/images/godivablue.png'),
+(13, 13, '/images/guylian2.png'),
+(14, 14, '/images/valrhona2.png'),
+(15, 15, '/images/royce2.png');
 
 -- --------------------------------------------------------
 
@@ -707,7 +698,7 @@ ALTER TABLE `sizes`
 -- Constraints for table `carts`
 --
 ALTER TABLE `carts`
-  ADD CONSTRAINT `carts_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `employees` (`id`);
+  ADD CONSTRAINT `carts_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`);
 
 --
 -- Constraints for table `cart_items`
